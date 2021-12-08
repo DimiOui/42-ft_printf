@@ -1,16 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/07 17:28:34 by dpaccagn          #+#    #+#             */
-/*   Updated: 2021/12/07 17:50:19 by dpaccagn         ###   ########.fr       */
+/*   Created: 2021/12/07 17:52:28 by dpaccagn          #+#    #+#             */
+/*   Updated: 2021/12/07 17:54:33 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_printf(const char *format, ...)
-{
-	return (0);
-}
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+
+# include <stdarg.h>
+# include <unistd.h>
+
+#endif
