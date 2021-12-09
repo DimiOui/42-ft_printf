@@ -6,12 +6,11 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:28:34 by dpaccagn          #+#    #+#             */
-/*   Updated: 2021/12/09 13:18:41 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2021/12/09 15:21:23 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include <unistd.h>
+#include "ft_printf.h"
 
 static int	ft_putstr(char *str)
 {
@@ -57,17 +56,14 @@ static int	ft_puthex(unsigned long nb, int uplow, int p)
 	int		count;
 
 	count = 0;
-	while (p > 0)
-	{
+	if (p == 0)
 		count += write(1, "0x", 2);
-		p--;
-	}
 	if (uplow)
 		base = "0123456789ABCDEF";
 	else
 		base = "0123456789abcdef";
 	if (nb > 15)
-		count += ft_puthex(nb / 16, uplow, p);
+		count += ft_puthex(nb / 16, uplow, 0);
 	count += write(1, &base[nb % 16], 1);
 	return (count);
 }
