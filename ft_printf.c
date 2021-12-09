@@ -6,7 +6,7 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:28:34 by dpaccagn          #+#    #+#             */
-/*   Updated: 2021/12/09 15:21:23 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2021/12/09 15:38:57 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static int	ft_puthex(unsigned long nb, int uplow, int p)
 	int		count;
 
 	count = 0;
-	if (p == 0)
+	if (p == 1)
 		count += write(1, "0x", 2);
 	if (uplow)
 		base = "0123456789ABCDEF";
