@@ -8,13 +8,13 @@ CC      = cc
 
 RM		= rm -f
 
-CFLAGS  = -Wall -Wextra -Werror
+CFLAGS  = -Wall -Wextra -Werror -c
 
-.c.o:
-			${CC} ${CFLAGS} -I includes -c $< -o ${<:.c=.o}
+%.o:		%.c
+			${CC} ${CFLAGS} -c $?
 
 ${NAME}:	${OBJS}
-			ar rcs ${NAME} ${OBJS}
+			ar rcsv ${NAME} $@ $?
 
 all:    	${NAME}
 
@@ -25,3 +25,5 @@ fclean: 	clean
 			${RM} ${NAME}
 
 re:         fclean all
+
+.PHONY: re clean fclean
