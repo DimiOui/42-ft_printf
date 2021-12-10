@@ -14,7 +14,7 @@ CFLAGS  = -Wall -Wextra -Werror -c
 			${CC} ${CFLAGS} -c $?
 
 ${NAME}:	${OBJS}
-			ar rcsv ${NAME} $@ $?
+			ar rcsv $@ $?
 
 all:    	${NAME}
 
