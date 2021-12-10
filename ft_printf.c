@@ -6,7 +6,7 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:28:34 by dpaccagn          #+#    #+#             */
-/*   Updated: 2021/12/09 15:38:57 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2021/12/10 11:23:36 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static int	ft_puthex(unsigned long nb, int uplow, int p)
 	int		count;
 
 	count = 0;
-	if (p == 1)
+	if (p)
 		count += write(1, "0x", 2);
 	if (uplow)
 		base = "0123456789ABCDEF";
@@ -67,6 +67,12 @@ static int	ft_puthex(unsigned long nb, int uplow, int p)
 	count += write(1, &base[nb % 16], 1);
 	return (count);
 }
+
+// ************************************************************************** //
+// ft_puthex is called both to return the address, the capital hex, and regular
+// hex. We do this by making if statements which will return 1/0 depending on
+// what we look for. The correct application will be used in ft_vargs.
+// ************************************************************************** //
 
 static int	ft_vargs(char c, va_list args)
 {
@@ -95,6 +101,10 @@ static int	ft_vargs(char c, va_list args)
 	return (size);
 }
 
+// ************************************************************************** //
+// ft_vargs will apply the correct functions to our format parameter in printf
+// ************************************************************************** //
+
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
@@ -117,3 +127,11 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (size);
 }
+
+// ************************************************************************** //
+// ft_printf will initialize our va_list, connecting our parameter 'char
+// * format' to the arguments in ft_vargs. While we look at our format, we check
+// for the '%' condition that will be the key signal for the ft_vargs call.
+// As ft_printf returns an int, we return the 'size' variable, and call our
+// printing functions in ft_vargs.
+// ************************************************************************** //
