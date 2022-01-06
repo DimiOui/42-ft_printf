@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:28:34 by dpaccagn          #+#    #+#             */
-/*   Updated: 2021/12/10 11:23:36 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/06 17:30:42 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+# include <unistd.h>
+# include <stdarg.h>
 
 static int	ft_putstr(char *str)
 {
