@@ -23,14 +23,14 @@ make
 ```
 
 ## Supported Format Specifiers
-- %d or %i: Signed decimal integer
-- %u: Unsigned decimal integer
-- %o: Unsigned octal
-- %x or %X: Unsigned hexadecimal (lowercase/uppercase)
-- %f: Decimal floating point
-- %c: Character
-- %s: String
-- %p: Pointer address
-- %%: Percent sign
+- `%d` or `%i`: Signed decimal integer
+- `%u`: Unsigned decimal integer
+- `%o`: Unsigned octal
+- `%x` or `%X`: Unsigned hexadecimal (lowercase/uppercase)
+- `%f`: Decimal floating point
+- `%c`: Character
+- `%s`: String
+- `%p`: Pointer address
+- `%%`: Percent sign
 
 For a more detailed explanation of format specifiers, please refer to the official documentation on printf format strings.
